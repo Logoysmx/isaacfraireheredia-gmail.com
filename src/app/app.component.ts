@@ -6,12 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'cualquier otra cosa';
-  obj = [{name: 'Isaac'}];
-  myString: string;
 
-  recibirData(e) {
-    this.myString = e;
-    console.log('Data que llega de event: ', e);
+  mostrar = false;
+
+  mostrarPopUp() {
+    this.mostrar = true;
   }
+
+  callBackCerrar(e) {
+    this.mostrar = e;
+  }
+
 }

@@ -1,10 +1,4 @@
-<app-popup [foo]="obj" (salida)="recibirData($event)"></app-popup>
+<app-popup [isVisible]="mostrar" (close)="callBackCerrar($event)"></app-popup>
 
 
-<div *ngIf="myString">
-  {{ myString }}
-</div>
-
-<div *ngIf="!myString">
-  No hay nada que venga del eventEmitter
-</div>
+<button (click)="mostrarPopUp()">Click</button>
