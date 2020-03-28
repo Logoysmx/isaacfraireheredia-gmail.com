@@ -1,4 +1,3 @@
-<app-popup [isVisible]="mostrar" (close)="callBackCerrar($event)"></app-popup>
+<app-popup [visible]="myModal" (close)="cerrarModal($event)"></app-popup>
 
-
-<button (click)="mostrarPopUp()">Click</button>
+<button (click)="mostrarModal()">Mostrar Modal</button>

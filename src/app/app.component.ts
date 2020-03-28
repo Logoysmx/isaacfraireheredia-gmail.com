@@ -7,14 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  mostrar = false;
+  myModal = false;
 
-  mostrarPopUp() {
-    this.mostrar = true;
+  mostrarModal() {
+    this.myModal = true;
   }
 
-  callBackCerrar(e) {
-    this.mostrar = e;
+  cerrarModal(e) {
+    this.myModal = e;
   }
 
 }

@@ -7,15 +7,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class PopupComponent implements OnInit {
 
-  @Input() isVisible: boolean;
-  @Output() close = new EventEmitter<boolean>();
+  @Input() visible: boolean;
+  @Output() close: EventEmitter<boolean> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  cerrarPopUp() {
+  closeModal() {
     this.close.emit(false);
   }
 

@@ -1,10 +1,10 @@
-<div class="modal" *ngIf="isVisible">
+<div class="modal" *ngIf="visible">
   <div class="container">
     <div>
       <div>
         <div class="modalHeader">
           <h2>My modal</h2>
-          <span (click)="cerrarPopUp()">x</span>
+          <span (click)="closeModal()">x</span>
         </div>
         <div class="modalContent">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio quibusdam numquam vel enim laboriosam reprehenderit delectus libero facilis sed. Reiciendis et sunt molestiae laboriosam, dolore dignissimos at aliquid itaque error.
@@ -12,4 +12,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> 
