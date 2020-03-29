@@ -1,10 +1,10 @@
-<app-popup [foo]="obj" (salida)="recibirData($event)"></app-popup>
+<app-popup [visible]="myModal" (close)="cerrarModal($event)">
+    <h2>Nuevo titulo</h2>
+    <div class="contenido">Este es un nuevo contenido.</div>
+</app-popup>
 
+<button (click)="mostrarModal()">Mostrar Modal</button>
+<button (click)="mostrarBootstrapModal()">Mostrar Bootrstrap Modal</button>
 
-<div *ngIf="myString">
-  {{ myString }}
-</div>
-
-<div *ngIf="!myString">
-  No hay nada que venga del eventEmitter
-</div>
+<hr>
+<p>{{ texto }}</p>

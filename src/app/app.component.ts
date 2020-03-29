@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { BootstrapContentModalComponent } from './bootstrap-content-modal/bootstrap-content-modal.component'
 
 @Component({
   selector: 'app-root',
@@ -6,12 +8,39 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'cualquier otra cosa';
-  obj = [{name: 'Isaac'}];
-  myString: string;
 
-  recibirData(e) {
-    this.myString = e;
-    console.log('Data que llega de event: ', e);
+  myModal = false;
+  texto: string;
+
+  constructor(private ngbModalRef: NgbModal) {}
+
+  mostrarModal() {
+    this.myModal = true;
   }
+
+  cerrarModal(e) {
+    this.myModal = e;
+  }
+
+  // Bootstrap Modal
+  mostrarBootstrapModal() {
+    const opts = {
+      windowClass: 'myCustomClass'
+    };
+
+    const modalRefNgBots = this.ngbModalRef.open(BootstrapContentModalComponent, opts);
+    
+    modalRefNgBots.componentInstance.entradaDedato = 'Dato de entrada...';
+
+    modalRefNgBots.componentInstance.closeMyModal = () => {
+      modalRefNgBots.close();
+    }
+
+    modalRefNgBots.componentInstance.salida.subscribe(res => {
+      this.texto = res;
+      console.log('Recibo: ', res);
+    });
+
+  }
+
 }

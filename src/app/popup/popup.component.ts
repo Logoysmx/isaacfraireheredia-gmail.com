@@ -7,18 +7,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class PopupComponent implements OnInit {
 
-  @Input() foo: string;
-  @Output() salida = new EventEmitter<string>();
+  @Input() visible: boolean;
+  @Output() close: EventEmitter<boolean> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.foo);
   }
 
-  enviarData(data) {
-    console.log('Salida de myPopup');
-    this.salida.emit(data);
+  closeModal() {
+    this.close.emit(false);
   }
 
 }
